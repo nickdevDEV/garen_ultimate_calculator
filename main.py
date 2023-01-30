@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
 st.write("# The Garen-inator")
 
