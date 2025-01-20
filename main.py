@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 st.write("# The Garen-inator")
 
-max_health = st.number_input('Max Health', step=100)
-tech = (st.slider('Percent Damage Increase', min_value=0, max_value=26, step=3) + 1)
+max_health = st.number_input('Max Health', step=100, value=1000)
+tech = (st.number_input('Percent Damage Increase', step=3) * 0.01) + 1
 
 collect = st.checkbox('COLLECTOR?')
 if collect:
