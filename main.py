@@ -12,11 +12,11 @@ if collect:
     sex = 0.05 * max_health
 else:
     sex = 0
-# shit = st.checkbox('LIFELINE?')
-# if shit:
-#     shitsize = st.number_input('Lifeline Size', step=50)
-# else:
-#     shitsize = 0
+shit = st.checkbox('LIFELINE?')
+if shit:
+    shitsize = st.number_input('Lifeline Size', step=50)
+else:
+    shitsize = 0
 
 # st.write('### Damage by Level')
 category_names = ['Kill Zone', 'Missing Health']
