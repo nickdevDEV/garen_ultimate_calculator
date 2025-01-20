@@ -5,20 +5,25 @@ import matplotlib.pyplot as plt
 st.write("# The Garen-inator")
 
 max_health = st.number_input('Max Health', step=100)
-tech = (st.slider('Quickblades Crit Chance', min_value=0, max_value=100, step=5) * 0.002) + 1
+tech = (st.slider('Percent Damage Increase', min_value=0, max_value=26, step=3) + 1)
 
 collect = st.checkbox('COLLECTOR?')
 if collect:
     sex = 0.05 * max_health
 else:
     sex = 0
+shit = st.checkbox('LIFELINE?')
+if shit:
+    shitsize = st.number_input('Lifeline Size', step=50)
+else:
+    shitsize = 0
 
 # st.write('### Damage by Level')
 category_names = ['Kill Zone', 'Missing Health']
 results = {
-    'Level Six': [int((120 + 0.20 * max_health) * tech + sex), int((max_health -(120 + 0.20 * max_health) * tech - sex))],
-    'Level Eleven': [int((230 + 0.2308 * max_health) * tech + sex), int((max_health -(230 + 0.2308 * max_health) * tech - sex))],
-    'Level Sixteen': [int((333 + 0.2593 * max_health) * tech + sex), int((max_health -(333 + 0.2593 * max_health) * tech - sex))],
+    'Level Six': [int((120 + 0.20 * max_health) * tech + sex - shitsize), int((max_health -(120 + 0.20 * max_health) * tech - sex))],
+    'Level Eleven': [int((230 + 0.2308 * max_health) * tech + sex - shitsize), int((max_health -(230 + 0.2308 * max_health) * tech - sex))],
+    'Level Sixteen': [int((333 + 0.2593 * max_health) * tech + sex - shitsize), int((max_health -(333 + 0.2593 * max_health) * tech - sex))],
 }
 
 def survey(results, category_names):
